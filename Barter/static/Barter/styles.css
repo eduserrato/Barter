@@ -1,0 +1,253 @@
+.navbar-brand{
+    font-size: 40px;
+    /* font-style: italic; */
+}
+#the_body{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.timestamp{
+    color: rgb(107, 104, 107);
+}
+.div-winner-choosen{
+    background-color: #fff88b;
+    border-radius: 5px;
+    
+}
+
+/* Make Barter section */
+#make-barter-form{
+ text-align: center;
+}
+#barter-form-title{
+    width: 75%;
+    height: 50px;
+}
+#barter-form-text{
+    width: 75%;
+    height: 50px;
+}
+#make_barter_text{
+    width: 75%;
+    height: 150px;
+
+}
+#make_barter_submit{
+    color: cornsilk;
+    border-radius: 5px;
+    width: 125px;
+    height: 50px;
+}
+#make-barter{
+    margin: 20px;
+}
+
+
+/* Barters Posts : list of posts, title everything*/
+#barters-title{
+    /* color: red; */
+    margin: 20px;
+}
+@media (min-width: 315px){
+    .images{
+        width: 100%;
+    } 
+    .barter-posts{
+        display: flex;
+        flex-wrap: wrap;
+        width: 315px;
+        margin: 20px;
+        /* padding: px; */
+
+    }
+}
+@media (max-width: 314px){
+    .images{
+        width: 100%;
+    }
+    .barter-posts{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 20px;
+        /* padding: 20px; */
+    }
+}
+#barters {
+    display: flex;
+    flex-wrap: wrap;
+    /* color: crimson; */
+    align-content: space-between;
+    justify-content: center;
+}
+.barter-posts{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* #barters > .barter-posts {
+
+    margin: 20px;
+    padding: 20px;
+    width: 315px;
+} */
+/* .images{
+    width: 315px;
+    text-align: center;
+} */
+
+
+
+/* Single Barter: Posts and everything */
+#item-page{
+margin: 20px;
+}
+@media (min-width:740px) {
+    #single-barter-image{
+
+    color: red;
+    width: 700px;
+    }
+}
+@media (max-width:739px){
+    #single-barter-image{
+    width: 100%
+    }
+}
+
+#offer-form-title{
+    width: 100%;
+    height: 30px;
+}
+#offer-form-text{
+    width: 100%;
+    height: 80px;
+}
+#make-offer-submit{
+    color: white;
+    border-radius: 5px;
+    width: 125px;
+    height: 50px;
+    margin-top: 10px;
+}
+.reject-buttons-single-barter-offers{
+    background-color: #FF6347;
+    border-radius: 5px;
+    margin: 5px;
+}
+.accept-buttons-single-barter-offers{
+    background-color: #32CD32;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Offers posts:  */
+#offers{
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    margin: 20px
+}
+.accept-buttons{
+    background-color: #32CD32;
+    border-radius: 5px;
+    margin: 5px;
+
+}
+.reject-buttons{
+    background-color: #FF6347;
+    border-radius: 5px;
+    margin: 5px;
+
+
+}
+@media (min-width:600px) {
+    .offer-images{
+        width: 600px;
+    }
+}
+@media (max-width:599px){
+    .offer-images{
+        width: 100%;
+    }
+}
+/* .offer-images{
+    width: 500px;
+} */
+
+
+/* Chat */
+#messages{
+    margin: 20px;
+}
+
+#conversation-textinput{
+
+    /* width: 10%; */
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 30px;
+    
+}
+#conversation-textinput-form > textarea{
+  height: 40px;
+  
+}
+#send-message-submit{
+   
+    color: white;
+    border-radius: 5px;
+}
+#message-form-text{
+    width: 80%
+
+}
+.myMessages{
+    /* Display on the right of the screen */
+    /* padding: 10px; */
+    text-align: right;
+
+}
+.notMyMessages{
+    /* Display on the left of the screen */
+    /* padding: 10px; */
+    text-align: left;
+}
+.message_sender{
+    font-size: small;
+    font-weight: bold;
+}
+.message_text{
+    border-radius: 5px;
+    
+}
+
+@media (min-width:650px) {
+    .message_sender{
+        font-size: medium;
+        font-weight: bold;
+    }
+    .message_text{
+        font-size: large;
+
+    }
+}
+@media (max-width:649px) and (min-width: 400px){
+    .message_sender{
+        font-size: smaller;
+        font-weight: bold;
+    }
+    .message_text{
+        font-size: medium;
+
+    }
+}
+@media (max-width:399px){
+    .message_sender{
+        font-size: small;
+        font-weight: bold;
+    }
+    .message_text{
+        font-size: small;
+
+    }
+}

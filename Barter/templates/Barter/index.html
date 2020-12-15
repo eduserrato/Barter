@@ -1,0 +1,84 @@
+{% extends "Barter/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if page_response %}
+        THE PAGE EXISTS
+    {% endif %}
+    
+    {% for message in messages %}
+    <ul style="background-color:lightgreen">{{message}}</ul>
+    {% endfor %}
+    <div id = "the-body">
+        <div id = "barters-container">
+            <div id = 'barters-title'></div>
+            <div id = "barters"></div>
+        </div>
+
+        <div id = "make-barter">
+            {% if user.is_authenticated %}
+            <h2>Create Barter</h2>
+            <hr>
+            <form action={% url 'create_barter' %} method="POST" enctype="multipart/form-data" id="make-barter-form" >
+                
+                {% csrf_token %}
+                {{ form_barter.title}}<br>
+                {{ form_barter.text}}<br>
+                {{ form_barter.image}}<br>
+                <input type="submit" value="Create Barter" class = "bg-dark" id = "make_barter_submit">
+            </form>
+            {% endif %}
+        </div>
+                
+        <div id = "offers">offers to me</div>
+        
+        <!-- Here I need to check which user is authenticated, if the same as owner 
+        then show offers, else button and if clicked display offer form -->
+        <div id = "item-page">
+            <div id = "single-item"> This is the item </div>
+            {% if user.is_authenticated %}
+            {{ request.user.id|json_script:"cur_user_id" }} 
+            <div id = "make-offer"><br> <strong>Fill up the form and click "make an offer" to make an offer for the product</strong>
+                <form  method="POST" enctype="multipart/form-data" id="make-offer-form" name = "make-offer-form">
+                
+                    {% csrf_token %}
+                    {{ form_offer.title}}<br>
+                    {{ form_offer.text}}<br>
+                    {{ form_offer.image}}<br>
+                    <input type="submit" value="Make Offer" class = "bg-dark" id = "make-offer-submit">
+                </form>
+            </div>
+            <div id = "barter-offers">Here are shown the offers to the owner of the item</div>
+            {% endif %}
+        </div>
+        <div id = "messages">
+            <div id= "conversations"></div>
+            <div id = "conversation">
+                <!-- {{ request.user.id|json_script:"cur_user_id" }}  -->
+                <div id = "conversation-messages"></div>
+                <div id = "conversation-textinput">
+                    <form method="POST" id="conversation-textinput-form" name="conversation-textinput-form">
+                        {% csrf_token %}
+                        {{form_message.text}}
+                        <script type="text/javascript">
+                            // using jQuery
+                            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+                        </script>
+                        <input type="submit" value="Send Message" class = "bg-dark" id = "send-message-submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}
+    
+{% block script %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{% static 'Barter/index.js' %}"></script>
+    
+    
+
+{% endblock %}
+
